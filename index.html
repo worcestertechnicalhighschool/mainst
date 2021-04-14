@@ -1,48 +1,46 @@
-
 <!DOCTYPE html>
 <html>
   <head>
     <!-- Google Slideshow -->
-  <style>
-    body{
-      margin:0
+    <style>
+      body{
+        margin:0;
+      }
+      iframe{
+        vertical-align:middle;
+      }
+  
+      .wths-banner{
+        text-align:center;
+        height: 50px;
+        background-color:#0070BB;
+        font-weight:bold;
+        letter-spacing: 2px;
+        position:absolute;
+        bottom:0;
+        margin:auto;
+        width:100vw;
+        color:white;
+        line-height: 50px;
+      }
+    </style>
+    
+    <script>
+    /**
+     * Page refresh every 10 minutes
+     */
+    function reload_timer(){
+      setInterval( function(){ window.location.reload(true); }, (10 * 60 * 1000) ); // Ten minutes
     }
-    iframe{
-      vertical-align:middle
-    }
-  </style>
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-
-  <script>
- $(document).ready(function(){
-    setInterval(function(){ reload_page(); }, 60*60000);
- });
-
-
- function reload_page()
- {
-    window.location.reload(true);
- }
-</script>
+    
+    </script>
   </head>
-  <body>
-  <iframe 
+  <body onload="reload_timer()">
+<iframe
   src="https://docs.google.com/presentation/d/e/2PACX-1vQcG2eiIemoRXHnLSGzGcLd48lJrOxVztnWC-KfEb_weg9XGGUsBVRZfeTAiMHNvLmjS3ytfOZ41dp-/embed?start=true&loop=true&delayms=10000" 
-  frameborder="0" width="2304" height="1325" allowfullscreen="true" mozallowfullscreen="true" 
+  frameborder="0" width="2304" height="1325" allowfullscreen="true" mozallowfullscreen="true"
   webkitallowfullscreen="true"
-  style="border: none; max-width:100%; max-height:100vh">></iframe>
-  <div
-    style="
-      text-align:center;
-      height: 24px;
-      background-color:#0070BB;
-      font-weight:bold;
-      position:absolute;
-      bottom:0;
-      margin:auto;
-      width:100vw;
-      color:white;
-      padding-top:5px;
-      ">Worcester Technical High School</div>
+  style="border: none; max-width:100%; max-height:100vh"></iframe>
+  <div class="wths-banner">WORCESTER TECHNICAL HIGH SCHOOL</div>
   </body>
 </html>
