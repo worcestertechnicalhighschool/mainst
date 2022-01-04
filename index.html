@@ -30,7 +30,15 @@
      * Page refresh every 10 minutes
      */
     function reload_timer(){
-      setInterval( function(){ window.location.reload(true); }, (10 * 60 * 1000) ); // Ten minutes
+      // Make variable so we can access it within the callback
+      let timeoutId;
+      timeoutId = setTimeout(() => 
+        {
+          clearTimeout(timeoutId); // If we don't clear the timeout, memory leak (very bad (._.`))
+          window.location.reload();
+        },
+        (10 * 60 * 1000) // Ten Minutes
+      )
     }
     
     </script>
